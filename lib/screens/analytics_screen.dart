@@ -1,4 +1,3 @@
-import 'dart:html' as html;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -19,25 +18,6 @@ class AnalyticsScreen extends StatelessWidget {
 
   DateTime get nextPeriod => startDate.add(const Duration(days: 28));
   DateTime get ovulationDay => startDate.add(const Duration(days: 14));
-
-  Future<void> exportPNG() async {
-    final boundary =
-    repaintKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
-
-    final image = await boundary.toImage(pixelRatio: 3);
-    final byteData =
-    await image.toByteData(format: ui.ImageByteFormat.png);
-
-    final pngBytes = byteData!.buffer.asUint8List();
-    final blob = html.Blob([pngBytes]);
-    final url = html.Url.createObjectUrlFromBlob(blob);
-
-    html.AnchorElement(href: url)
-      ..download = "cycle_trend.png"
-      ..click();
-
-    html.Url.revokeObjectUrl(url);
-  }
 
   Widget infoBox(String title, DateTime date) {
     return Container(
@@ -140,11 +120,7 @@ class AnalyticsScreen extends StatelessWidget {
 
             const SizedBox(height: 25),
             Center(
-              child: ElevatedButton.icon(
-                onPressed: exportPNG,
-                icon: const Icon(Icons.download),
-                label: const Text("Export Graph as PNG"),
-              ),
+              child: 
             ),
           ],
         ),
@@ -152,4 +128,5 @@ class AnalyticsScreen extends StatelessWidget {
     );
   }
 }
+
 
