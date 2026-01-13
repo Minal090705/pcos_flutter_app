@@ -1,11 +1,11 @@
 {
-    "name": "flutter_projects",
-    "short_name": "flutter_projects",
+    "name": "bloom",
+    "short_name": "bloom",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "BLOOM – PCOS & Cycle Tracking App",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
