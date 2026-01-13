@@ -1,6 +1,6 @@
-# flutter_projects
+# bloom
 
-BLOOM – PCOS & Cycle Tracking App
+A new Flutter project.
 
 ## Getting Started
 
